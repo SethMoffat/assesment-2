@@ -22,7 +22,7 @@
 */
 
 const greetUser = (username) => {
-    console.log("Welcome back,", username)
+    return("Welcome back," + username)
 
 }
 
@@ -54,13 +54,20 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 
 
-function canWeDeliver(zipcode){
-    console.log( deliveryAreaZipCodes.filter(zipcode))
-}
+// function canWeDeliver(zipcode){
+//     console.log( deliveryAreaZipCodes.filter(zipcode))
+// }
 
 //I forgot how to use filter properly
   
-
+const canWeDeliver = zipCodes => {
+    if(deliveryAreaZipCodes.includes()){
+        return "You're in our delivery zone"
+    }
+    else{
+        return "Sorry, we can't deliver to that address"  
+     }
+} 
 
 
 /* 
@@ -79,10 +86,15 @@ function canWeDeliver(zipcode){
     loop (for loop, higher order array method).
     Name your new function `canWeDeliverTwo`.
 */
-
-// CODE HERE
-
-
+const canWeDeliverTwo = zipCode =>{
+    let message = "Sorry, we can't deliver to that address"
+    deliveryAreaZipCodes.forEach(zip => {
+        if(zipCode === zip){
+            return "You're in the delivery zone"
+        }
+    })
+        return message
+        }
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -115,8 +127,9 @@ const deals = [
     to be itself, but use the `replace` method
     to replace the 15 with a 10.
 */
-
-let result = deals.title[replace]("15%", "10%");
+deals[0].title = deals[0].title.replace(`15`, `10`)
+console.log(deals)
+// let result = deals.title[replace]("15%", "10%");
 
 //I've spent over an hour on this page I'm going to move on
 
@@ -133,4 +146,6 @@ let result = deals.title[replace]("15%", "10%");
     to be displaying wrong on the live site.
 */
 
-//CODE HERE
+deals[1].desc= deals[1].desc.replace("March","April").trim()
+
+console.log(deals)

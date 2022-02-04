@@ -19,7 +19,16 @@
     stored on the object.
 */
 
-//CODE HERE
+class Employee {
+    constructor(name, shifts){
+        this.name = name
+        this.shifts = shifts
+    }
+    getScheduele(){
+        console.log(`${this.name} works on ${this.shifts})
+
+    }
+}
 
 
 
@@ -40,7 +49,7 @@
     `empOne` object.
 */
 
-//CODE HERE
+empOne.getScheduele()
 
 
 /*
@@ -55,49 +64,60 @@
     dot or bracket notation.
 */
 
-//CODE HERE
+const empTwo = {...empOne}
+empTwo.name = `Nick`
+// const empTwo = empOne
 
 
 
-//////////////////PROBLEM 2////////////////////
-/*  
-    Write a class called Manager that *extends* 
-    the Employee class. In the constructor, 
-    make sure you require all of the parameters 
-    from the Employee class as well as 1 
-    new one: employees, which will be an array of 
-    employees that report to this manager. 
-    (Hint: don't forget to call the super function)
+// //////////////////PROBLEM 2////////////////////
+//     Write a class called Manager that *extends* 
+//     the Employee class. In the constructor, 
+//     make sure you require all of the parameters 
+//     from the Employee class as well as 1 
+//     new one: employees, which will be an array of 
+//     employees that report to this manager. 
+//     (Hint: don't forget to call the super function)
 
-    Create a method called `getEmployees` that
-    console.logs a string:
-    [NAME] manages [EMPLOYEES]
-    Where NAME and EMPLOYEES reference the values
-    stored on the object.
+//     Create a method called `getEmployees` that
+//     console.logs a string:
+//     [NAME] manages [EMPLOYEES]
+//     Where NAME and EMPLOYEES reference the values
+//     stored on the object.
 
-    Create a second method called `addEmployee`
-    that takes in one argument, `emp`, which
-    should be a string of an employee name.
-    The function should push the name into 
-    the employees array. 
-*/
-
-//CODE HERE
+//     Create a second method called `addEmployee`
+//     that takes in one argument, `emp`, which
+//     should be a string of an employee name.
+//     The function should push the name into 
+//     the employees array. 
 
 
+class Manager extends Employee {
+    contructor(name, shifts, employees){
+        super(name.shifts)
+        this.empoyees = employees
+    }
+}
 
-/*
-    Create a new instance of your class.
-    Save it to a variable called `manager`.
+getEmployees(){
+    console.log{`${this.name}} manages ${this.employees.join(`,`)}`)
+}
 
-    You can use this sample data or make
-    up your own:
-    name: Winston
-    shifts: weekday mornings, weekday afternoons
-    employees: Cece and Schmidt
-*/
+addEmployee(newEmployee){
+    this.employees.push
+}
+// /*
+//     Create a new instance of your class.
+//     Save it to a variable called `manager`.
 
-//CODE HERE
+//     You can use this sample data or make
+//     up your own:
+//     name: Winston
+//     shifts: weekday mornings, weekday afternoons
+//     employees: Cece and Schmidt
+// */
+
+const manager = new Manager("Winston", "weekday mornings", "weekday afternoons",["CECE","Schmidt])
 
 
 /*
@@ -105,7 +125,7 @@
     `manager` object.  
 */
 
-//CODE HERE
+manager.getEmployees()
 
 /*
     Call the `addEmployee` method on the 
@@ -113,7 +133,7 @@
     'Coach' or whatever name you'd like.
 */
 
-//CODE HERE 
+manager.addEmplyee(`Coach`)
 
 /*
     Call the `getEmployees` method on the
@@ -121,4 +141,4 @@
     that an employee was added.
 */
 
-//CODE HERE
+manager.getEmployees()

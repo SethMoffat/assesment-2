@@ -29,7 +29,20 @@
     stored on the object.
 */
 
-//CODE HERE
+class Ticket {
+    constructor(items, orderTime, customer){
+        this.items = items
+        this.orderTime = orderTime
+        this.customer = customer
+        this.status = `queued`
+
+
+    }
+    updateStatus(newStatus){
+        this.status = newStatus
+        `The order for customer ${this.customer} is now ${this.status}`
+    }
+}
 
 
 
@@ -44,7 +57,7 @@
     customer: 575
 */
 
-//CODE HERE
+const firstTicket = new Ticket(`pizza`, `bread`,`soda`, '7:03pm`, 575)
 
 
 /*
@@ -53,4 +66,4 @@
     'cooking'
 */
 
-//CODE HERE
+firstTicket.updateStatus(`cooking`)

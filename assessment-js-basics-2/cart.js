@@ -35,8 +35,11 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+const summedPrice = cart.reduce((acc, el)=>{
+    console.log(acc, el)
+    return acc + el.price
+}, 0)
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -53,7 +56,9 @@ const cart = [
     decimals, for example: .06 for a 6% tax.
 */
 
-//CODE HERE
+const calcFinalPrice = (total, coupon, tax) => {
+    let finalTotal = (total * (1+ tax ))
+}
 
 
 
@@ -78,8 +83,12 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
-
+    The properties will be things like the name and information of the customer. This is because the customer is the object and the 
+    The customer will have:
+    firstName: 
+    lastName: 
+    phone: 
+    creditCardNum
 */
 
 /*
@@ -87,4 +96,10 @@ const cart = [
     guidelines.
 */
 
-//CODE HERE
+const customer = {
+    firstName: `Seth`,
+    lastName: `Moffat`,
+    phone: `7146005669`,
+    creditCardNum: 000000000000
+
+}
